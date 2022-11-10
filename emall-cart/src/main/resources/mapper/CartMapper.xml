@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.cart.dao.CartDao">
+
+    <resultMap id="CartBaseMap" type="com.example.cart.entity.CartEntity">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+    </resultMap>
+
+    <resultMap id="CartMap" type="com.example.cart.entity.CartEntity">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="user_id" jdbcType="BIGINT" property="userId"/>
+        <collection property="cartItem" ofType="com.example.cart.entity.CartItemEntity">
+            <result column="product_id" jdbcType="BIGINT" property="productId"/>
+            <result column="shop_id" jdbcType="BIGINT" property="shopId"/>
+            <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+            <result column="price" jdbcType="DECIMAL" property="price"/>
+            <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="CartItemMap" type="com.example.cart.entity.CartItemEntity">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="cart_id" jdbcType="BIGINT" property="cartId"/>
+        <result column="product_id" jdbcType="BIGINT" property="productId"/>
+        <result column="shop_id" jdbcType="BIGINT" property="shopId"/>
+        <result column="quantity" jdbcType="INTEGER" property="quantity"/>
+        <result column="price" jdbcType="DECIMAL" property="price"/>
+        <result column="is_delete" jdbcType="INTEGER" property="isDelete"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime"/>
+    </resultMap>
+
+    <select id="selectUserCart" resultMap="CartItemMap">
+        select
+        tci.product_id,
+        tci.shop_id,
+        tci.quantity,
+        tci.price,
+        tci.create_time
+        from t_cart_item tci
+        where is_delete = 0 and tci.cart_id = (
+        select tc.id
+        from t_cart tc
+        where tc.user_id = #{userId})
+    </select>
+
+    <!--查询-->
+    <select id="selectByUserId">
+        select tc.id,
+        tc.user_id,
+        tc.total_amount,
+        tc.item_count,
+        tci.product_id,
+        tci.shop_id ,
+        tci.quantity,
+        tci.price,
+        tci.selected
+        from t_cart_item tci, t_cart tc
+        where tci.cart_id = tc.id
+        and tc.user_id = #{user_id}
+    </select>
+
+    <update id="updateQuantity" parameterType="com.example.cart.entity.CartItemEntity">
+        update t_cart_item
+        set quantity = #{quantity}
+        modify_time = #{modifyTime}
+        where id = #{id}
+    </update>
+
+
+    <!--    通过用户查询购物车id-->
+    <select id="selectCartByUserId" resultType="INTEGER">
+        select id from t_cart where user_id = #{user_id};
+    </select>
+
+    <select id="selectCartItem" resultMap="CartItemMap">
+        select
+        tci.id,
+        tci.cart_id,
+        tci.product_id,
+        tci.shop_id,
+        tci.quantity,
+        tci.price
+        from t_cart_item tci
+        where tci.cart_id = #{cartId} and product_id = #{productId};
+    </select>
+
+    <select id="selectCartItemById" resultMap="CartItemMap">
+        select
+        id,
+        cart_id,
+        product_id,
+        shop_id,
+        quantity,
+        price,
+        is_delete,
+        create_time,
+        modify_time
+        from t_cart_item
+        where id = #{id}
+    </select>
+
+    <!--    <select id="selectQuantityById" resultMap="map">-->
+    <!--        select-->
+    <!--            tci.product_id,-->
+    <!--            tci.quantity-->
+    <!--        from t_cart_item tci-->
+    <!--        where tci.product_id in-->
+    <!--              <foreach collection="array" item="id" open="(" close=")" separator=",">-->
+    <!--                 #{id}-->
+    <!--             </foreach>;-->
+    <!--    </select>-->
+
+    <!-- 创建购物车 -->
+    <insert id="insertCart" parameterType="com.example.cart.entity.CartEntity">
+        insert table t_cart(user_id,create_time,is_clear)
+        values (#{userId}, #{createTime}, #{isClear});
+    </insert>
+
+    <!-- 添加商品到购物车    -->
+    <insert id="insert" parameterType="com.example.cart.entity.CartItemEntity">
+        insert into t_cart_item(cart_id, product_id, shop_id, quantity, price, create_time)
+        values (#{cartId}, #{productId}, #{shopId}, #{quantity}, #{price}, #{createTime});
+    </insert>
+
+    <!--    &lt;!&ndash; 批量删除 &ndash;&gt;-->
+    <!--    <delete id="deleteByIds" parameterType="INTEGER" >-->
+    <!--        DELETE FROM t_cart_item WHERE id IN-->
+    <!--        <foreach collection="array" item="id" open="(" close=")" separator=",">-->
+    <!--            #{id}-->
+    <!--        </foreach>-->
+    <!--    </delete>-->
+
+    <update id="deleteByIds">
+        update t_cart_item tci
+        set tci.is_delete = 1,
+        modify_time = now()
+        where tci.id IN
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </update>
+
+    <!--  购物车商品数量修改  -->
+    <update id="update" parameterType="com.example.cart.entity.CartEntity">
+        update t_cart_item
+        set quantity = #{quantity},
+        modify_time = #{modifyTime}
+        where id = #{id}
+    </update>
+
+
+    <!--    <select id="list" resultMap="CartBaseMap">-->
+    <!--        select id,user_id,item_count,total_amount,create_time,modify_time-->
+    <!--        from t_cart;-->
+    <!--    </select>-->
+
+    <!-- 清空购物车   -->
+    <update id="clearCart" parameterType="INTEGER">
+        update t_cart_item tci
+        set tci.is_delete = 1,
+        modify_time = now()
+        where cart_id = (
+        select id
+        from t_cart tc
+        where tc.user_id = #{userId}) and tci.is_delete = 0;
+    </update>
+
+
+    <select id="selectCartItemByIds" resultMap="CartItemMap">
+        select
+        id,
+        cart_id,
+        product_id,
+        shop_id,
+        quantity,
+        price,
+        is_delete,
+        create_time,
+        modify_time
+        from t_cart_item
+        where id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>;
+    </select>
+</mapper>

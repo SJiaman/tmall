@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b618d97e-592a-4cae-893e-40d25acaaea7" name="Default Changelist" comment="store 修改">
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/aspect/LogAop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/config/SwaggerConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/converter/OrderConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/dto/OrderDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/dto/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/entity/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/feign/ShopFeignClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/feign/fallbacks/ShopFeignClientFallbackFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/interceptor/LoginInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/vo/CartProductVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/vo/OrderDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/vo/OrderVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/vo/ProductVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/handler/GlobalHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/interceptor/TimeInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/CartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/CartApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/controller/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/dao/CartDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/dao/CartDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/dto/CartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/dto/CartDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/dto/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/dto/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/dto/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/dto/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/entity/BaseEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/entity/CartEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/entity/CartEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/entity/CartItemEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/entity/CartItemEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/entity/StoreProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/entity/StoreProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/feign/OrderFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/feign/OrderFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/feign/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/feign/ProductClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/feign/StoreProductFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/feign/StoreProductFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/java/com/enn/cart/service/impl/CartServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/service/impl/CartServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/main/resources/mapper/CartMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/resources/mapper/CartMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/test/java/com/enn/order/MallApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/test/java/com/example/order/MallApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/test/java/com/enn/order/cart/CartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/test/java/com/example/order/cart/CartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/test/java/com/enn/order/cart/ListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/test/java/com/example/order/cart/ListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/test/java/com/enn/order/cart/ListUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/test/java/com/example/order/cart/ListUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-cart/src/test/java/com/enn/order/cart/SpringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/test/java/com/example/order/cart/SpringUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/enums/ErrorMsgEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/enums/ErrorMsgEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/enums/ResponseStatusEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/enums/ResponseStatusEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/enums/ResultCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/enums/ResultCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/exception/BusinessRuntimeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/exception/BusinessRuntimeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-common/src/main/java/com/enn/common/utils/JsonResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-common/src/main/java/com/example/common/utils/JsonResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-gateway/src/main/java/com/enn/gateway/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-gateway/src/main/java/com/example/gateway/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-gateway/src/main/java/com/enn/gateway/demo/nacosdiscovery/NacosDiscoveryConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-gateway/src/main/java/com/example/gateway/demo/nacosdiscovery/NacosDiscoveryConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-gateway/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/emall-gateway/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-gateway/src/test/java/com/enn/gateway/demo/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-gateway/src/test/java/com/example/gateway/demo/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/OrderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/OrderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/config/LoginInterceptorConfigure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/BaseController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/CartController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/DistrictController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-cart/src/main/java/com/example/cart/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/District.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/interceptor/LoginInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/AddressMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/CartMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/DistrictMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/ProductMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/IAddressService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ICartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/IDistrictService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/IOrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/IProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/AccessDeniedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/AddressCountLimitException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/AddressNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/CartNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/DeleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/InsertException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/PasswordNotMatchException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/ProductNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/ServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/UpdateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ex/UsernameDuplicateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/AddressServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/CartServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/DistrictServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/OrderServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/service/ipml/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/util/JsonResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/java/com/enn/order/vo/CartVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/main/resources/mapper/OrderMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/src/main/resources/mapper/OrderMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/test/java/com/enn/order/StoreApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/test/java/com/enn/order/mapper/OrderMapperTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/test/java/com/enn/order/mapper/UserMapperTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-order/src/test/java/com/enn/order/service/UserServiceTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/ShopApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/ShopApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/controller/ShopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/controller/ShopController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/dto/ProductListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/dto/ProductListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/entity/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/entity/Shop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/entity/ShopExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/entity/ShopExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/entity/ShopProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/entity/ShopProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/entity/ShopProductExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/entity/ShopProductExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/feign/CartFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/feign/CartFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/feign/StoreFeignClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/feign/StoreFeignClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/feign/fallbacks/StoreFeignClientFallbackFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/feign/fallbacks/StoreFeignClientFallbackFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/mapper/ShopMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/mapper/ShopMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/mapper/ShopProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/mapper/ShopProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/service/ShopService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/service/ShopService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/service/impl/ShopServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/service/impl/ShopServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/vo/ProductDetailVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/vo/ProductDetailVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/vo/ProductVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/java/com/enn/shop/vo/ShopProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/vo/ShopProductVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/com/enn/shop/mapper/ShopMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/com/example/shop/mapper/ShopMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/com/enn/shop/mapper/ShopProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/com/example/shop/mapper/ShopProductMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/mapper/StoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/mapper/StoreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/src/test/java/com/enn/order/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/test/java/com/example/order/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/target/classes/mapper/StoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/target/classes/mapper/StoreMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-shop/target/classes/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/target/classes/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-shop/src/main/java/com/example/shop/Generator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/StoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/StoreApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/controller/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/converter/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/converter/ProductConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/dto/CategoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/dto/CategoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/dto/ProductPageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/dto/ProductPageDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/entity/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/entity/category.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/entity/category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/entity/categoryExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/entity/categoryExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/handler/GlobalHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/handler/GlobalHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/interceptor/TimeInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-order/src/main/java/com/example/order/interceptor/TimeInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/mapper/CategoryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/mapper/CategoryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/mapper/ProductMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/mapper/ProductMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/vo/ProductPageVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/vo/ProductPageVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/java/com/enn/store/vo/ProductVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/java/com/example/store/vo/ProductVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/resources/com/enn/store/mapper/CategoryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/resources/com/example/store/mapper/CategoryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/main/resources/mapper/ProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/main/resources/mapper/ProductMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emall-store/src/test/java/com/enn/order/StoreApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/emall-store/src/test/java/com/example/order/StoreApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\SoftWare\apache-maven-3.6.3\repository" />
+        <option name="mavenHome" value="D:/SoftWare/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\SoftWare\apache-maven-3.6.3\conf\settings_enn.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2E1JIHddquJV7QVgAOnLG9qMqFX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.JAVA_MODULE" value="1.8" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../learn/redis/code/hm-dianping" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.12674272" />
+    <property name="project.structure.side.proportion" value="0.23126338" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\demo\emall\emall-shop\src\main\resources" />
+      <recent name="E:\demo\emall\emall-store\src\main\resources" />
+      <recent name="E:\demo\emall\emall-store" />
+      <recent name="E:\demo\emall" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.enn.order.aspect" />
+      <recent name="com.enn.order.interceptor" />
+      <recent name="com.enn.order.handler" />
+      <recent name="com.enn.order.config" />
+      <recent name="com.enn.store.dto" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b618d97e-592a-4cae-893e-40d25acaaea7" name="Default Changelist" comment="" />
+      <created>1661757075697</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661757075697</updated>
+      <workItem from="1661757077282" duration="10389000" />
+      <workItem from="1661826509407" duration="4454000" />
+      <workItem from="1661838046437" duration="11466000" />
+      <workItem from="1661907464364" duration="3745000" />
+      <workItem from="1661912236515" duration="595000" />
+      <workItem from="1661912847285" duration="17384000" />
+      <workItem from="1661939969623" duration="678000" />
+      <workItem from="1662105289289" duration="6038000" />
+      <workItem from="1662359893173" duration="4816000" />
+      <workItem from="1662428223828" duration="19000" />
+      <workItem from="1662433382078" duration="10148000" />
+      <workItem from="1662517035904" duration="4083000" />
+      <workItem from="1662605347584" duration="7460000" />
+      <workItem from="1662624104726" duration="24000" />
+      <workItem from="1662624469046" duration="159000" />
+      <workItem from="1662624644269" duration="1510000" />
+      <workItem from="1662627501086" duration="2440000" />
+      <workItem from="1662630534282" duration="644000" />
+      <workItem from="1662691086636" duration="11359000" />
+      <workItem from="1663207788143" duration="86000" />
+      <workItem from="1663313572007" duration="1364000" />
+      <workItem from="1663843919114" duration="24008000" />
+      <workItem from="1663919227378" duration="592000" />
+      <workItem from="1665401828963" duration="1135000" />
+      <workItem from="1665985516895" duration="770000" />
+      <workItem from="1667977154865" duration="2112000" />
+      <workItem from="1668063471331" duration="1507000" />
+    </task>
+    <task id="LOCAL-00001" summary="一些修改">
+      <created>1661762848999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661762848999</updated>
+    </task>
+    <task id="LOCAL-00002" summary="项目重构：可以正常启动">
+      <created>1661854206345</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1661854206345</updated>
+    </task>
+    <task id="LOCAL-00003" summary="商品仓库,商铺一些修改">
+      <created>1661938899411</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1661938899411</updated>
+    </task>
+    <task id="LOCAL-00004" summary="store 修改">
+      <created>1663849959466</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663849959466</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/eamll-product" />
+      <path value="$PROJECT_DIR$/emall-cart" />
+      <path value="$PROJECT_DIR$/emall-order" />
+      <path value="$PROJECT_DIR$/emall-product" />
+      <path value="$PROJECT_DIR$/emall-store" />
+    </ignored-roots>
+    <MESSAGE value="一些修改" />
+    <MESSAGE value="项目重构：可以正常启动" />
+    <MESSAGE value="商品仓库,商铺一些修改" />
+    <MESSAGE value="store 修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="store 修改" />
+  </component>
+</project>

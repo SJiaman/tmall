@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace指定当前的映射文件和哪个接口进行映射,需要指定接口的文件路径,路径需要是包的完整路径结构-->
+<mapper namespace="com.example.shop.mapper.StoreMapper">
+    <!--分别为Store和Product配置映射规则-->
+    <resultMap id="StoreEntityMap" type="com.example.shop.entity.Store">
+        <id column="sid" property="sid"></id>
+        <result column="is_delete" property="isDelete"></result>
+    </resultMap>
+
+    <!--根据商铺id查询商品列表-->
+    <select id="findProductBySid" resultType="com.example.shop.entity.StoreProduct">
+        select
+        id,
+        sid,
+        pid,
+        title,
+        num,
+        price,
+        sell_point as sellPoint,
+        status,
+        priority
+        from t_store_product
+        where
+        sid = #{sid}
+        <!--sid = #{sid} and is_delete = false-->
+        order by
+        t_store_product.priority desc
+    </select>
+
+    <!--为购物车和订单提供商品信息查询-->
+    <select id="findProductByPid" resultType="com.example.shop.entity.StoreProduct">
+        select
+        title,
+        num,
+        price,
+        sell_point as sellPoint
+        from t_store_product
+        where
+        pid = #{pid} and status = 1
+        <!--sid = #{sid} and is_delete = false-->
+    </select>
+
+    <!--根据订单返回的商品id和数量对已上架商品库存进行修改-->
+    <update id="updateProductNum">
+        update t_store_product
+        set num=num - #{count}
+        where pid = #{pid}
+    </update>
+
+
+    <!--id表示映射接口方法的名称，直接在标签中写sql语句-->
+    <!--useGeneratedKeys和keyProperty定义自增与主键-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
+        INSERT INTO t_user(uid, username, password,
+                           salt, is_default, is_delete, created_user,
+                           created_time, modified_user, modified_time)
+        VALUES (#{uid}, #{username}, #{password},
+                #{salt}, #{isDefault}, #{isDelete}, #{createdUser},
+                #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+</mapper>

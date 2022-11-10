@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/emall-cart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-cart/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-order/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-shop/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-shop/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-store/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/emall-store/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace用于指定当前的映射文件和哪个接口进行映射,需要指定接口的文件路径,路径需要是包的完整路径结构-->
+<mapper namespace="com.example.shop.mapper.UserMapper">
+    <!--在sql语句的最上面借助ResultMap标签来自定义映射规则
+    id属性:表示给这个映射规则分配一个唯一的id值,对应的就是resultMap="id属性值"
+    type属性:取值是一个类,表示数据库中的查询结果与java中哪个实体类进行结果集的映射
+    -->
+    <resultMap id="UserEntityMap" type="com.example.shop.entity.User">
+        <!--将表的字段和类的属性名不一致的进行匹配指定,名称一致的也可以指定,但没必要
+        但是,在定义映射规则时无论主键名称是否一致都不能省
+        column属性:表示表中的字段名称
+        property属性:表示类中的属性名称
+        -->
+        <id column="uid" property="uid"></id>
+        <result column="is_default" property="isDefault"></result>
+        <result column="is_delete" property="isDelete"></result>
+        <result column="created_user" property="createdUser"></result>
+        <result column="created_time" property="createdTime"></result>
+        <result column="modified_user" property="modifiedUser"></result>
+        <result column="modified_time" property="modifiedTime"></result>
+    </resultMap>
+
+    <!--id表示映射接口方法的名称，直接在标签中写sql语句-->
+    <!--useGeneratedKeys和keyProperty定义自增与主键-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="uid">
+        INSERT INTO t_user(uid, username, password,
+                           salt, is_default, is_delete, created_user,
+                           created_time, modified_user, modified_time)
+        VALUES (#{uid}, #{username}, #{password},
+                #{salt}, #{isDefault}, #{isDelete}, #{createdUser},
+                #{createdTime}, #{modifiedUser}, #{modifiedTime})
+    </insert>
+    <!--select语句查询一个或多个对象-->
+    <!--
+    resultType表示查询的结果集类型，只要指定映射的类型(User)，并给定具体的包路径：User
+    resultMap表示当数据库表的字段与类属性字段不同时，自定义查询结果集的映射规则
+    -->
+    <select id="findByUsername" resultMap="UserEntityMap">
+        SELECT *
+        FROM t_user
+        WHERE username = #{username}
+    </select>
+
+
+    <!--根据商铺id查询商品列表-->
+    <select id="findStoreByUid" resultType="com.example.shop.entity.UserStore">
+        select id,
+               uid,
+               sid,
+               status,
+               title,
+               priority,
+               is_delete as isDelete
+        from t_user_store
+        where uid = #{uid}
+          and is_delete = false
+        order by t_user_store.priority desc
+    </select>
+</mapper>

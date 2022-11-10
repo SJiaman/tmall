@@ -1,0 +1,9 @@
+
+}
+java:S1488?"`Immediately return this expression instead of assigning it to the temporary variable "pageInfo".(θΒ®8νεκρ®0
+q
+java:S3252*"OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(ηψ¤ÿÿÿÿÿ8ζκρ®0
+k
+java:S16120"IReplace this lambda with method reference 'CartItemEntity::getProductId'.(ξΰΝϋÿÿÿÿ8ζκρ®0
+l
+java:S1612†"IReplace this lambda with method reference 'CartItemEntity::getProductId'.(ΝΏΠ‰ÿÿÿÿÿ8“ζκρ®0
