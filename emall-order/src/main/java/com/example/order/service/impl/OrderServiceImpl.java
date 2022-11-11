@@ -48,7 +48,6 @@ public class OrderServiceImpl implements OrderService {
         // 计算价格
         BigDecimal totalPrice = productVO.getPrice().multiply(new BigDecimal(productDTO.getNum()));
         Order order = new Order();
-        order.
 
         int row = orderMapper.insert(order);
         if (row != 1) {

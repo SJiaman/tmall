@@ -1,8 +1,6 @@
 package com.example.user.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.example.common.utils.Result;
-import com.example.user.dto.LoginFormDTO;
 import com.example.user.entity.User;
 
 import javax.servlet.http.HttpSession;

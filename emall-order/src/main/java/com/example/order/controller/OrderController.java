@@ -28,7 +28,8 @@ public class OrderController {
     @ApiOperation("从店铺直接创建订单")
     @PostMapping("/create")
     public Result<Boolean> createOrderFromShop(@RequestBody ProductVO productVO) {
-        return Result.success(orderService.create(OrderConverter.INSTANCE.productVO2DTO(productVO)));
+//        return Result.success(orderService.create(OrderConverter.INSTANCE.productVO2DTO(productVO)));
+        return Result.success();
     }
 
     @ApiOperation("从购物车创建订单")

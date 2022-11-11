@@ -57,4 +57,19 @@ public enum ErrorMsgEnum {
 
         private String errorMsg;
     }
+
+    @Getter
+    @AllArgsConstructor(access = AccessLevel.PRIVATE)
+    public enum UserError {
+        PHONE_WRONG_ERROR("30001", "电话号码格式有误"),
+        INSERT_PRODUCT_ERROR("10002", "商品添加未知错误"),
+        DELETE_PRODUCT_ERROR("10003", "商品删除未知错误"),
+        UPDATE_PRODUCT_ERROR("10004", "商品修改出现未知异常")
+        ;
+
+
+        private String errorCode;
+
+        private String errorMsg;
+    }
 }
