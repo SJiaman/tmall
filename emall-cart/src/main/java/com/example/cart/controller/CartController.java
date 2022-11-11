@@ -5,7 +5,7 @@ import com.example.cart.dto.CartDto;
 import com.example.cart.dto.OrderItem;
 import com.example.cart.feign.OrderFeignClient;
 import com.example.cart.service.CartService;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.github.pagehelper.PageInfo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -34,8 +34,8 @@ public class CartController {
 
 
     @GetMapping("/order/test")
-    public JsonResult<List<OrderItem>> getOrderItemList(@RequestParam Integer oid) {
-        JsonResult<List<OrderItem>> orderItemList = orderFeignClient.getOrderItemList(oid);
+    public Result<List<OrderItem>> getOrderItemList(@RequestParam Integer oid) {
+        Result<List<OrderItem>> orderItemList = orderFeignClient.getOrderItemList(oid);
         return orderItemList;
     }
 
@@ -50,11 +50,11 @@ public class CartController {
      */
     @ApiOperation(value = "用户购物车商品列表")
     @GetMapping("/list")
-    public JsonResult<PageInfo> cartList(@RequestParam Integer userId,
+    public Result<PageInfo> cartList(@RequestParam Integer userId,
                                          @RequestParam Integer pageNum,
                                          @RequestParam Integer pageSize) {
         PageInfo cartList = cartService.list(userId, pageNum, pageSize);
-        return JsonResult.success(cartList);
+        return Result.success(cartList);
     }
 
     /**
@@ -65,13 +65,13 @@ public class CartController {
      */
     @ApiOperation(value = "添加商品到购物车")
     @PostMapping("/add")
-    public JsonResult<Void> addItemToCart(@RequestParam Integer userId,
+    public Result<Void> addItemToCart(@RequestParam Integer userId,
                                           @RequestParam Integer productId,
                                           @RequestParam Integer quantity) {
         if (!cartService.addItem(userId, productId, quantity)) {
-            return JsonResult.fail();
+            return Result.fail();
         }
-        return JsonResult.success();
+        return Result.success();
     }
 
     /**
@@ -83,11 +83,11 @@ public class CartController {
      */
 
     @PostMapping("/update")
-    public JsonResult<Void> updateItemQuantity(@RequestParam Integer id, @RequestParam Integer quantity) {
+    public Result<Void> updateItemQuantity(@RequestParam Integer id, @RequestParam Integer quantity) {
         if (!cartService.updateQuantity(id, quantity)) {
-            return JsonResult.fail();
+            return Result.fail();
         }
-        return JsonResult.success();
+        return Result.success();
     }
 
 
@@ -98,21 +98,21 @@ public class CartController {
      * @return
      */
     @PostMapping("/delete")
-    public JsonResult<Void> deleteItem(@RequestBody Integer[] ids) {
+    public Result<Void> deleteItem(@RequestBody Integer[] ids) {
         if (!cartService.deleteByIds(ids)) {
-            return JsonResult.fail();
+            return Result.fail();
         }
-        return JsonResult.success();
+        return Result.success();
     }
 
 
 
     @GetMapping("/clear")
-    public JsonResult<Void> clearCart(@RequestParam Integer userId) {
+    public Result<Void> clearCart(@RequestParam Integer userId) {
         if (!cartService.clearCart(userId)) {
-            return JsonResult.fail();
+            return Result.fail();
         }
-        return JsonResult.success();
+        return Result.success();
     }
 
 
@@ -124,17 +124,17 @@ public class CartController {
      */
 
     @PostMapping("/select/info")
-    public JsonResult<CartDto> getSelectItem(@RequestBody Integer[] ids) {
+    public Result<CartDto> getSelectItem(@RequestBody Integer[] ids) {
         log.info("ids:{}", ids);
         CartDto selectItem = cartService.getSelectItem(ids);
-        //return new JsonResult<>(ResultCode.SUCCESS.getCode(), selectItem);
-        return JsonResult.success(selectItem);
+        //return new Result<>(ResultCode.SUCCESS.getCode(), selectItem);
+        return Result.success(selectItem);
     }
 
 
 //    @ApiOperation(value = "购物车生成订单")
 //    @GetMapping("/create/order")
-//    public JsonResult<Boolean> createOrderFromCart(@RequestParam Integer[] ids) {
+//    public Result<Boolean> createOrderFromCart(@RequestParam Integer[] ids) {
 //        return null;
 //    }
 }

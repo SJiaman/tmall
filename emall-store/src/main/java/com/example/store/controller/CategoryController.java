@@ -1,6 +1,6 @@
 package com.example.store.controller;
 
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.store.dto.CategoryDTO;
 import com.example.store.service.CategoryService;
 import io.swagger.annotations.Api;
@@ -23,8 +23,8 @@ public class CategoryController {
 
     @ApiOperation("所有分类")
     @GetMapping("/category")
-    public JsonResult<List<CategoryDTO>> getCategory() {
+    public Result<List<CategoryDTO>> getCategory() {
         List<CategoryDTO> category = categoryService.getCategory();
-        return JsonResult.success(category);
+        return Result.success(category);
     }
 }

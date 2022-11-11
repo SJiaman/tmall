@@ -1,6 +1,6 @@
 package com.example.shop.feign.fallbacks;
 
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.shop.dto.ProductDTO;
 import com.example.shop.feign.StoreFeignClient;
 import org.springframework.cloud.openfeign.FallbackFactory;
@@ -19,18 +19,18 @@ public class StoreFeignClientFallbackFactory implements FallbackFactory<StoreFei
     public StoreFeignClient create(Throwable cause) {
         return new StoreFeignClient() {
             @Override
-            public JsonResult<List<ProductDTO>> findProductList() {
-                return JsonResult.fail();
+            public Result<List<ProductDTO>> findProductList() {
+                return Result.fail();
             }
 
             @Override
-            public JsonResult<ProductDTO> findProduct(Integer id) {
-                return JsonResult.fail();
+            public Result<ProductDTO> findProduct(Integer id) {
+                return Result.fail();
             }
 
             @Override
-            public JsonResult updateNum(Integer id, Integer num, Integer flag) {
-                return JsonResult.fail();
+            public Result updateNum(Integer id, Integer num, Integer flag) {
+                return Result.fail();
             }
         };
     }

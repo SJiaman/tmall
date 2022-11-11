@@ -1,7 +1,7 @@
 package com.example.order.handler;
 
 import com.alibaba.cloud.commons.lang.StringUtils;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalHandler {
     @ExceptionHandler({Exception.class})
-    public JsonResult handlerRuntimeException(Exception e) {
+    public Result handlerRuntimeException(Exception e) {
         log.error("错误信息：{}, 异常e: {}", e.getMessage(), e);
         if (StringUtils.isBlank(e.getMessage()) && e.getCause() != null) {
             log.error("错误信息：{}", e.getCause().getMessage());
         }
-        return JsonResult.fail(e.getMessage());
+        return Result.fail(e.getMessage());
     }
 }

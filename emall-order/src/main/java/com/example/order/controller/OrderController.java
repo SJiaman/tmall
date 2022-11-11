@@ -1,6 +1,6 @@
 package com.example.order.controller;
 
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.order.converter.OrderConverter;
 import com.example.order.dto.OrderDTO;
 import com.example.order.service.OrderService;
@@ -27,32 +27,32 @@ public class OrderController {
 
     @ApiOperation("从店铺直接创建订单")
     @PostMapping("/create")
-    public JsonResult<Boolean> createOrderFromShop(@RequestBody ProductVO productVO) {
-        return JsonResult.success(orderService.create(OrderConverter.INSTANCE.productVO2DTO(productVO)));
+    public Result<Boolean> createOrderFromShop(@RequestBody ProductVO productVO) {
+        return Result.success(orderService.create(OrderConverter.INSTANCE.productVO2DTO(productVO)));
     }
 
     @ApiOperation("从购物车创建订单")
-    public JsonResult<Boolean> createOrderFromCart(@RequestBody CartProductVO cartProductVO) {
-        return JsonResult.success(true);
+    public Result<Boolean> createOrderFromCart(@RequestBody CartProductVO cartProductVO) {
+        return Result.success(true);
     }
 
     @ApiOperation("用户订单列表")
     @GetMapping("/list")
-    public JsonResult<List<OrderVO>> getOrderList(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
+    public Result<List<OrderVO>> getOrderList(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
         List<OrderDTO> orderDTOS = orderService.orderList(pageNum, pageSize);
-        return JsonResult.success(OrderConverter.INSTANCE.dtoList2voList(orderDTOS));
+        return Result.success(OrderConverter.INSTANCE.dtoList2voList(orderDTOS));
     }
 
     @ApiOperation("取消订单")
     @PostMapping("/cancel")
-    public JsonResult<Boolean> cancelOrder(@RequestBody OrderVO orderVO) {
-        return JsonResult.success(true);
+    public Result<Boolean> cancelOrder(@RequestBody OrderVO orderVO) {
+        return Result.success(true);
     }
 
     @ApiOperation("修改订单信息")
     @PostMapping("/edit")
-    public JsonResult<Boolean> editOrder(@RequestBody OrderVO orderVO) {
-        return JsonResult.success(true);
+    public Result<Boolean> editOrder(@RequestBody OrderVO orderVO) {
+        return Result.success(true);
     }
 
 }

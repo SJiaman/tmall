@@ -1,6 +1,6 @@
 package com.example.order.feign;
 
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.order.feign.fallbacks.ShopFeignClientFallbackFactory;
 import com.example.order.vo.ProductVO;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -21,5 +21,5 @@ public interface ShopFeignClient {
      * @return
      */
     @GetMapping("/getSingleProduct")
-    JsonResult<ProductVO> getProductByPid(@RequestParam Integer sid, @RequestParam Integer pid);
+    Result<ProductVO> getProductByPid(@RequestParam Integer sid, @RequestParam Integer pid);
 }

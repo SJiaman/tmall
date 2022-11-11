@@ -1,6 +1,6 @@
 package com.example.shop.feign;
 
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.shop.dto.ProductDTO;
 import com.example.shop.feign.fallbacks.StoreFeignClientFallbackFactory;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -17,13 +17,13 @@ import java.util.List;
 @FeignClient(name = "emall-store", fallbackFactory = StoreFeignClientFallbackFactory.class)
 public interface StoreFeignClient {
     @RequestMapping(value = "/store/findlist", method = RequestMethod.GET)
-    JsonResult<List<ProductDTO>> findProductList();
+    Result<List<ProductDTO>> findProductList();
 
 
     @RequestMapping(value = "/store/details", method = RequestMethod.GET)
-    JsonResult<ProductDTO> findProduct(@RequestParam Integer id);
+    Result<ProductDTO> findProduct(@RequestParam Integer id);
 
 
     @RequestMapping(value = "/store/update/num", method = RequestMethod.POST)
-    JsonResult updateNum(@RequestParam Integer id, @RequestParam Integer num, @RequestParam Integer flag);
+    Result updateNum(@RequestParam Integer id, @RequestParam Integer num, @RequestParam Integer flag);
 }

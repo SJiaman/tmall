@@ -9,6 +9,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 public interface CartFeignClient {
 
 //    @RequestMapping("/cart/list")
-//    JsonResult<CartItem>  getCartList(Integer userId);
+//    Result<CartItem>  getCartList(Integer userId);
 
 }

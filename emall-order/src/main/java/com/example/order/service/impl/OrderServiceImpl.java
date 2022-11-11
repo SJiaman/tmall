@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.example.common.enums.ResultCode;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.order.converter.OrderConverter;
 import com.example.order.dto.OrderDTO;
 import com.example.order.dto.ProductDTO;
@@ -40,7 +40,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public boolean createFromShop(ProductDTO productDTO) {
         // 从商铺获取商品信息
-        JsonResult<ProductVO> result = shopFeignClient.getProductByPid(productDTO.getSid(), productDTO.getId());
+        Result<ProductVO> result = shopFeignClient.getProductByPid(productDTO.getSid(), productDTO.getId());
         ProductVO productVO = new ProductVO();
         if (result.getState().equals(ResultCode.SUCCESS.getCode())) {
             productVO = result.getData();

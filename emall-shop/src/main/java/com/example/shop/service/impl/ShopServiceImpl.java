@@ -2,7 +2,7 @@ package com.example.shop.service.impl;
 
 import com.example.common.enums.ErrorMsgEnum;
 import com.example.common.exception.BusinessRuntimeException;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.example.shop.dto.ProductDTO;
 import com.example.shop.entity.ShopProduct;
 import com.example.shop.entity.ShopProductExample;
@@ -37,7 +37,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     public Boolean purchase(Integer shopId, Integer productId, Integer num) {
         // 商品库存查询商品状态
-        JsonResult<ProductDTO> result = storeFeignClient.findProduct(productId);
+        Result<ProductDTO> result = storeFeignClient.findProduct(productId);
         ProductDTO productDTO = result.getData();
 
         if (productDTO.getNum() < num) {

@@ -1,7 +1,7 @@
 package com.example.cart.feign;
 
 import com.example.cart.dto.ProductDto;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +25,7 @@ public interface StoreProductFeignClient {
 //     * @return
 //     */
 //    @RequestMapping("/shop/product")
-//    JsonResult<ProductDto> getProductById(@RequestParam Integer id);
+//    Result<ProductDto> getProductById(@RequestParam Integer id);
 //
 //    /**
 //     * 通过ids查询价格列表
@@ -33,7 +33,7 @@ public interface StoreProductFeignClient {
 //     * @return
 //     */
 //    @RequestMapping("/shop/product/list")
-//    JsonResult<List<ProductDto>>  getProductsByIds(@RequestBody Integer[] ids);
+//    Result<List<ProductDto>>  getProductsByIds(@RequestBody Integer[] ids);
 
     /**
      * 单个商品信息查询(查询商铺上架的商品详细信息)
@@ -42,7 +42,7 @@ public interface StoreProductFeignClient {
      * @return
      */
     @RequestMapping("/stores/getSingleStoreProduct/")
-    JsonResult<ProductDto> getStoreProductById(@RequestParam Integer id);
+    Result<ProductDto> getStoreProductById(@RequestParam Integer id);
 
 
     /**
@@ -52,5 +52,5 @@ public interface StoreProductFeignClient {
      * @return
      */
     @RequestMapping("/stores/getStoreProducts/")
-    JsonResult<List<ProductDto>> getStoreProductsByIds(@RequestBody Integer[] ids);
+    Result<List<ProductDto>> getStoreProductsByIds(@RequestBody Integer[] ids);
 }

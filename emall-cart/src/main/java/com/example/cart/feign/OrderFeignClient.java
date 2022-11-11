@@ -2,7 +2,7 @@ package com.example.cart.feign;
 
 
 import com.example.cart.dto.OrderItem;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,5 +31,5 @@ public interface OrderFeignClient {
     Boolean createOrderByCart(@RequestParam Integer productId, @RequestParam Integer quantity);
 
     @RequestMapping("/orders/getOrderItemList/")
-    JsonResult<List<OrderItem>> getOrderItemList(@RequestParam Integer oid);
+    Result<List<OrderItem>> getOrderItemList(@RequestParam Integer oid);
 }

@@ -8,7 +8,7 @@ import com.example.cart.entity.CartItemEntity;
 import com.example.cart.feign.StoreProductFeignClient;
 import com.example.cart.service.CartService;
 import com.example.common.enums.ResultCode;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
@@ -48,7 +48,7 @@ public class CartServiceImpl implements CartService {
         Integer[] ids = userCart.stream().map(x -> x.getProductId()).toArray(Integer[]::new);
 
         // 查询商品详情信息
-        JsonResult<List<ProductDto>> productsByIds = storeProductFeignClient.getStoreProductsByIds(ids);
+        Result<List<ProductDto>> productsByIds = storeProductFeignClient.getStoreProductsByIds(ids);
         log.info("products:{}", productsByIds.getState());
         if (productsByIds.getState().equals(ResultCode.SUCCESS.getCode())) {
             List<ProductDto> products = productsByIds.getData();
@@ -80,7 +80,7 @@ public class CartServiceImpl implements CartService {
         }
         // 先查询商品库存，库存不足不准修改
         CartItemEntity cartItemEntity = cartDao.selectCartItemById(id);
-        JsonResult<ProductDto> productResult = storeProductFeignClient.getStoreProductById(cartItemEntity.getProductId());
+        Result<ProductDto> productResult = storeProductFeignClient.getStoreProductById(cartItemEntity.getProductId());
         ProductDto product = productResult.getData();
         log.info("店铺商品数为：{}", product.getQuantity());
         if (product.getQuantity() < quantity) {
@@ -96,7 +96,7 @@ public class CartServiceImpl implements CartService {
     @Transactional(rollbackFor = Exception.class)
     public boolean addItem(Integer userId, Integer productId, Integer quantity) {
         // 第一步，调取店铺商品接口
-        JsonResult<ProductDto> productResult = storeProductFeignClient.getStoreProductById(productId);
+        Result<ProductDto> productResult = storeProductFeignClient.getStoreProductById(productId);
         ProductDto product = productResult.getData();
 
         log.info("商品信息：{}", product);
@@ -134,7 +134,7 @@ public class CartServiceImpl implements CartService {
         Integer[] productIds = userCart.stream().map(x -> x.getProductId()).toArray(Integer[]::new);
 
         // 从店铺获取商品信息
-        JsonResult<List<ProductDto>> productResult = storeProductFeignClient.getStoreProductsByIds(productIds);
+        Result<List<ProductDto>> productResult = storeProductFeignClient.getStoreProductsByIds(productIds);
         if (!productResult.getState().equals(ResultCode.SUCCESS.getCode())) {
             return null;
         }

@@ -1,7 +1,7 @@
 package com.example.cart.feign;
 
 import com.example.cart.dto.Product;
-import com.example.common.utils.JsonResult;
+import com.example.common.utils.Result;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,7 +19,7 @@ import java.util.List;
 public interface ProductClient {
 
     @RequestMapping(value = "products/findlist", method = RequestMethod.POST)
-    public JsonResult<List<Product>> findProductList();
+    public Result<List<Product>> findProductList();
 
 
 }
