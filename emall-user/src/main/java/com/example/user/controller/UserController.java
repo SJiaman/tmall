@@ -5,13 +5,10 @@ import com.example.user.dto.LoginFormDTO;
 import com.example.user.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServletRequest;
+
 
 /**
  * @author Tian Changqing
@@ -27,8 +24,22 @@ public class UserController {
 
     @ApiOperation("发送验证码")
     @PostMapping("/sendCode")
-    public Result sendCode(@RequestBody String phone, HttpSession session) {
-        String code = userService.sendCode(phone, session);
+    public Result sendCode(@RequestBody String phone) {
+        String code = userService.sendCode(phone);
         return Result.success(code);
+    }
+
+    @ApiOperation("登录")
+    @PostMapping("/login")
+    public Result login(@RequestBody LoginFormDTO form) {
+        String token = userService.login(form);
+        return Result.success(token);
+    }
+
+    @ApiOperation("退出")
+    @GetMapping("/logout")
+    public Result logout(HttpServletRequest request) {
+        userService.logout(request);
+        return Result.success();
     }
 }
