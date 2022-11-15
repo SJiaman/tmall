@@ -34,6 +34,7 @@ public class CategoryServiceImpl implements CategoryService {
                     return category;
                 }).collect(Collectors.toList());
 
+        // 形成分类树
         List<CategoryDTO> collect = categoryDTO.stream()
                 .filter(o -> o.getIsParent() == 1)
                 .peek(o -> o.setChildren(getChildren(o, categoryDTO)))
@@ -42,9 +43,17 @@ public class CategoryServiceImpl implements CategoryService {
         return collect;
     }
 
+    /**
+     * 递归查询子节点
+     * @param category
+     * @param categoryDTOList
+     * @return
+     */
     private List<CategoryDTO> getChildren(CategoryDTO category, List<CategoryDTO> categoryDTOList) {
         List<CategoryDTO> categoryDTOS = categoryDTOList.stream()
+                // 比较父节点id
                 .filter(o -> o.getParentId().equals(category.getId()))
+                // 递归查询子节点
                 .peek(o -> o.setChildren(getChildren(o, categoryDTOList)))
                 .sorted(Comparator.comparingInt(CategoryDTO::getSortOrder))
                 .collect(Collectors.toList());

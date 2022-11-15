@@ -14,6 +14,7 @@ import com.github.pagehelper.page.PageMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
+
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
@@ -128,18 +129,6 @@ public class ProductServiceImpl implements ProductService {
             result.setStatus(0);
         }
 
-//        Integer num = product.getNum();
-//        if (null != null && num == 0) {
-//            product.setStatus(0);
-//        }
-
-        // 与此同时更新修改人与修改时间
-//        Date now = new Date();
-//        product.setId(id);
-//        product.setDataVersion(result.getDataVersion());
-//        product.setModifiedUser(Constants.STORE_ADMIN);
-//        product.setModifiedTime(now);
-
         result = ProductConverter.INSTANCE.dto2do(product);
         Integer rows = productMapper.updateProduct(result);
         if (rows != 1) {
@@ -149,8 +138,9 @@ public class ProductServiceImpl implements ProductService {
         return true;
     }
 
-    /**店铺需要调用的扣减接口,并传入修改店铺的名字*/
+
     /**
+     * 店铺需要调用的扣减接口,并传入修改店铺的名字
      * 采用乐观锁进行多个访问处理
      */
 
@@ -221,7 +211,7 @@ public class ProductServiceImpl implements ProductService {
                 if (newNum == 0) {
                     product.setStatus(Constants.PRODUCT_SOLD_OUT);
                 }
-            }else if (flag.equals(Constants.RETURN_PRODUCT)){
+            } else if (flag.equals(Constants.RETURN_PRODUCT)) {
                 if (product.getStatus().equals(Constants.PRODUCT_SOLD_OUT)) {
                     product.setStatus(Constants.PRODUCT_ON_SALE);
                 }
