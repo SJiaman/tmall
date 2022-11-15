@@ -1,0 +1,61 @@
+server:
+  port: 10001
+spring:
+  application:
+    name: eamll-gateway
+
+  cloud:
+    nacos:
+    discovery:
+    server-addr: 127.0.0.1:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      globalcors:
+        cors-conFigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods: "*"
+            allowCredentials: true
+            allowedHeaders: "*"
+      routes:
+        - id: user-gateway
+          uri: lb://emall-user
+          order: 1
+          predicates:
+            - Path=/server-user/**
+          filters:
+            - StripPrefix=1
+
+        - id: order-gateway
+          uri: lb://emall-order
+          order: 1
+          predicates:
+            - Path=/server-order/**
+          filters:
+            - StripPrefix=1
+
+        - id: cart-gateway
+          uri: lb://emall-cart
+          order: 1
+          predicates:
+            - Path=/server-cart/**
+          filters:
+            - StripPrefix=1
+
+        - id: store-gateway
+          uri: lb://emall-store
+          order: 1
+          predicates:
+            - Path=/server-store/**
+          filters:
+            - StripPrefix=1
+
+        - id: shop-gateway
+          uri: lb://emall-shop
+          order: 1
+          predicates:
+            - Path=/server-shop/**
+          filters:
+            - StripPrefix=1

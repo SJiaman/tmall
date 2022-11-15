@@ -27,14 +27,14 @@ public class ProductController {
 
 
     @ApiOperation(value = "商品列表")
-    @RequestMapping(value = "/findlist", method = RequestMethod.GET)
+    @RequestMapping(value = "/find/product/list", method = RequestMethod.GET)
     public Result<ProductPageVO> findProductList(@RequestParam Integer pageNum, @RequestParam Integer pageSize) {
         ProductPageDTO data = productService.findProductList(pageNum, pageSize);
         return Result.success(ProductConverter.INSTANCE.dtoPage2voPage(data));
     }
 
     @ApiOperation(value = "商品详情")
-    @RequestMapping(value = "/details", method = RequestMethod.GET)
+    @RequestMapping(value = "/product/details", method = RequestMethod.GET)
     public Result<ProductVO> findProduct(@RequestParam Integer id) {
         // 调用业务对象执行获取数据
         ProductDTO data = productService.findProduct(id);
@@ -44,7 +44,7 @@ public class ProductController {
 
 
     @ApiOperation(value = "添加商品")
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/add", method = RequestMethod.POST)
     public Result insertProduct(@RequestBody ProductVO productVO) {
         productService.insertProduct(ProductConverter.INSTANCE.vo2dto(productVO));
         // 响应成功
@@ -53,7 +53,7 @@ public class ProductController {
 
 
     @ApiOperation(value = "删除商品")
-    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/delete", method = RequestMethod.POST)
     public Result deleteProduct(@RequestParam Integer id) {
 
         productService.deleteProduct(id);
